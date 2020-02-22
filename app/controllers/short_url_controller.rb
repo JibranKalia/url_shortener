@@ -1,13 +1,11 @@
 class ShortUrlController < ApplicationController
   def show
     id = params[:id]
-    @short_url = ShortUrl.find(slug: id)
+    @short_url = ShortUrl.find_by(slug: id)
     if @short_url.present?
-      redirect_to @short_url.destination # Need to get the exact URL
+      redirect_to @short_url.destination
     else
-      # TODO: redirect to error page
+      render template: 'error_pages/404', layout: false, status: :not_found
     end
-
-
   end
 end
