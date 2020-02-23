@@ -15,7 +15,7 @@ RSpec.describe ShortUrlsController, type: :controller do
         post :create, params: { short_url: @short_url }
       }.to change { ShortUrl.count }.by(1)
 
-      assert_response :success
+      assert_response :found
     end
   end
 

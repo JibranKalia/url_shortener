@@ -1,24 +1,33 @@
-# README
+# Setup
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```
+  # Clone Repo
+  git clone https://github.com/JibranKalia/url_shortener.git
+  cd url_shortener
 
-Things you may want to cover:
+  # Get Ruby 2.7 via RVM
+  curl -sSL https://get.rvm.io | bash -s stable --ruby
+  rvm install ruby-2.7.0
+  rvm use ruby-2.7.0
 
-* Ruby version
+  # Get Yarn
+  brew install yarn
 
-* System dependencies
+  # Get and start postgres via Homebrew
+  brew install postgresql
+  brew services start postgresql
 
-* Configuration
+  # Create Database
+  createdb 'url_shortener_development'
+  createdb 'url_shortener_test'
 
-* Database creation
+  # Install gems
+  bundle install && yarn install
+  bundle exec rails db:migrate
 
-* Database initialization
+  # Start server
+  bundle exec rails s -p 3000
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  # To run tests
+  bundle exec rspec
+```
