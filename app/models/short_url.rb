@@ -14,6 +14,6 @@
 #  index_short_urls_on_slug         (slug) UNIQUE
 #
 class ShortUrl < ApplicationRecord
-  validates :destination, presence: true, format: URI::regexp(%w(http https))
+  validates :destination, presence: true, format: { with: URI::regexp(%w(http https)), message: "is not a valid url" }, uniqueness: true
   validates :slug, presence: true
 end
