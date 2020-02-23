@@ -6,10 +6,10 @@ class ShortUrlsController < ApplicationController
   def create
     @short_url = ShortUrl.new(params[:short_url].permit(:destination))
     @short_url.slug = SecureRandom.urlsafe_base64
-    if @short_url.save!
+    if @short_url.save
       redirect_to @short_url
     else
-      redirect_to new_short_url_path, notice: "Error creating link."
+      render :new
     end
   end
 
@@ -17,7 +17,7 @@ class ShortUrlsController < ApplicationController
     @short_url = ShortUrl.find(params[:id])
   end
 
-  def redirect 
+  def redirect
     slug = params[:id]
     @short_url = ShortUrl.find_by(slug: slug)
     if @short_url.present?

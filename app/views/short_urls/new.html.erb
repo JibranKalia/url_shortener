@@ -1,12 +1,8 @@
-<% if notice%>
-  <p id="notice"><%= notice %></p>
-<% end%>
-
 <div>
   <h1>Create Click-Worthy Links</h1>
 </div>
 
 <%= form_for(@short_url) do |f| %>
-  <%= f.text_field :destination %>
+  <%= f.text_field :destination, required: true  %>
   <%= f.submit "Shorten" %>
 <% end %>
