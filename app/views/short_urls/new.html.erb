@@ -2,7 +2,12 @@
   <h1>Create Click-Worthy Links</h1>
 </div>
 
-<%= form_with model: @short_url, local: true, class: "short-url-form " do |f| %>
+<%= form_with model: @short_url, local: true, class: "short-url-form" do |f| %>
   <%= f.text_field :destination, placeholder: "Shorten your link", required: true, class: "url-input" %>
+  <% if @short_url.errors.has_key?(:destination) %>
+    <div class='error'> 
+      <%= @short_url.errors.full_messages_for(:destination).join(', ')%>
+    </div>
+  <% end %>
   <%= f.submit "Shorten", class: "submit-button" %>
 <% end %>
