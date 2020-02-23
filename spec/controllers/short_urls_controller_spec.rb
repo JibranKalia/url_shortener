@@ -1,7 +1,25 @@
 require 'rails_helper'
 
 RSpec.describe ShortUrlsController, type: :controller do
-  describe "#show" do
+  describe "#new" do
+    it "should get new" do
+      get :new
+      assert_response :success
+    end
+  end
+
+  describe "#create" do
+    it "should create new short link" do
+      @short_url = { destination: "http://www.google.com" }
+      expect { 
+        post :create, params: { short_url: @short_url }
+      }.to change { ShortUrl.count }.by(1)
+
+      assert_response :success
+    end
+  end
+
+  describe "#redirect" do
     it "redirects to the destination if short url is present" do
       destination = "http://www.google.com"
       short_url = ShortUrl.create!(slug: "1234", destination: destination) 

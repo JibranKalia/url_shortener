@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :short_url do
-    slug { "123456789" }
-    destination { "http://www.google.com" }
+    sequence(:slug) { |n| n.to_s }
+    sequence(:destination) { |n| "http://www.google.com/#{n}" }
   end
 end
