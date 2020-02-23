@@ -1,4 +1,6 @@
 <h1>Successfully Shortened!</h1>
 
-<div> <%= @short_url.destination%> </div>
-<div> <%= URI.join('http://localhost:3000/', @short_url.slug) %> </div>
+<div class='shortened-link'>
+  <div class='long-link'><%= @short_url.destination%></div>
+  <div class='short-link'><%= URI.join('http://localhost:3000/', @short_url.slug)%></div>
+</div>

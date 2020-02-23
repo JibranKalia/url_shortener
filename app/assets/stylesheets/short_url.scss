@@ -1,3 +1,78 @@
 // Place all the styles related to the short_url controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+@keyframes cssAnimation {
+  to {
+      width: 0px;
+      height: 0px;
+      padding: 0px;
+      margin-bottom: 0px;
+      overflow: hidden;
+      visibility: hidden;
+  }
+}
+
+h1 {
+  color: #252628;
+  font-family: "ProximaNova ExtraBold","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.short-url-form {
+  display: flex;
+  flex-direction: column;
+  font-family: "ProximaNova ExtraBold","Helvetica Neue",Helvetica,Arial,sans-serif;
+  .url-input {
+    box-sizing: border-box;
+    line-height: 1.5;
+    max-width: 75vw;
+    height: 3.75rem;
+    border: 1px solid #d3d4d7;
+    border-radius: 8px;
+    font-size: 20px;
+    padding: 0 20px;
+    color: #36383b;
+  }
+  .submit-button {
+    margin-top: 1rem;
+    border: 1px solid transparent;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 8px;
+    color: white;
+    font-size: 20px;
+    padding: 18px 30px;
+    vertical-align: bottom;
+    margin-bottom: 0;
+    background: #1b3987;
+    max-width: 25vw;
+  }
+  .error {
+    font-weight: 400;
+    text-align: center;
+    justify-content: center;
+    line-height: normal;
+    margin-bottom: 5px;
+    padding: 16px 20px;
+    align-items: center;
+    font-size: 18px;
+    background-color: #fa9b93;
+    color: #731b14;
+    border-radius: 8px;
+    max-width: 50vw;
+    animation: cssAnimation 0s ease-in 5s forwards;
+  }
+}
+
+.shortened-link {
+  font-family: "ProximaNova Regular","Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 18px;
+  .long-link {
+    margin-bottom: 1rem;
+  }
+  .short-link {
+    color: #0236b9;
+  }
+}

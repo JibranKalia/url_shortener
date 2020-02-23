@@ -1,8 +1,8 @@
-<div>
+<div class="new-link">
   <h1>Create Click-Worthy Links</h1>
 </div>
 
-<%= form_for(@short_url) do |f| %>
-  <%= f.text_field :destination, required: true  %>
-  <%= f.submit "Shorten" %>
+<%= form_with model: @short_url, local: true, class: "short-url-form " do |f| %>
+  <%= f.text_field :destination, placeholder: "Shorten your link", required: true, class: "url-input" %>
+  <%= f.submit "Shorten", class: "submit-button" %>
 <% end %>
