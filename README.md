@@ -31,3 +31,9 @@
   # To run tests
   bundle exec rspec
 ```
+
+## Note 
+
+Please ignore the numerous deprecation warnings such as `warning: Using the last argument as keyword parameters is deprecated; maybe ** should be added to the call`.
+
+The underlying libraries like active record have not updated to for Ruby 2.7's changes.
