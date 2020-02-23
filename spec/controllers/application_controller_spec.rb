@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe ShortUrlController, type: :controller do
+RSpec.describe ShortUrlsController, type: :controller do
   describe "#show" do
     it "redirects to the destination if short url is present" do
       destination = "http://www.google.com"

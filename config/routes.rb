@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  get '/:id', to: 'short_url#show'
+  # root 'short_url#new'
+  get '/:id', to: 'short_urls#redirect'
+
+  resources :short_urls do
+    get :redirect
+  end
 end
