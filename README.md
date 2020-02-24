@@ -27,10 +27,35 @@
 
   # Start server
   bundle exec rails s -p 3000
+  
 
   # To run tests
   bundle exec rspec
 ```
+
+## Usage
+
+### Creating a short link
+Navigate to `http://localhost:3000/`.
+You will see the following screen. Please put the complete URL including `http` or `https`
+
+![Screen Shot 2020-02-24 at 10 22 01 AM](https://user-images.githubusercontent.com/14208431/75170371-a09c6d00-56ef-11ea-8158-bdae03fe3e78.png)
+
+After successful shortening you will see the following success screen:
+![Screen Shot 2020-02-24 at 10 24 32 AM](https://user-images.githubusercontent.com/14208431/75170931-7c8d5b80-56f0-11ea-984b-36a75679c3ea.png)
+
+### Using the shortened link
+
+Just copy the shortened url. For example `http://localhost:3000/HugF0sC-xY4UaAo0Yh5Ysg` and paste it to the URL. You will be automatically routed to the original url.
+
+Please note that if the shortened url is mistyped or incorrect a 404 screen will be displayed.
+
+## Future Improvement possibilities
+- Better shortening algorithm. Currrently I am using `SecureRandom.urlsafe_base64`.
+- Less stringent validations. I opted to go with uniqueness constraints on destination. This is not strictly necessary.
+- Better url formatting logic. Currently, I require http to be entered with the url. This can definitely be improved.
+- Automatic short link expiry.
+- Visit tracking etc.
 
 ## Note 
 
