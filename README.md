@@ -54,6 +54,8 @@ Please note that if the shortened url is mistyped or incorrect a 404 screen will
 - Better shortening algorithm. Currrently I am using `SecureRandom.urlsafe_base64`.
 - Less stringent validations. I opted to go with uniqueness constraints on destination. This is not strictly necessary.
 - Better url formatting logic. Currently, I require http to be entered with the url. This can definitely be improved.
+- `rails new` adds a lot of unnecessary files including webpacker. I wish I had been more careful of the options I used.
+- Not using Ruby 2.7 which leads to tons of unnecessary deprecation warnings.
 - Automatic short link expiry.
 - Visit tracking etc.
 
