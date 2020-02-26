@@ -16,4 +16,9 @@
 class ShortUrl < ApplicationRecord
   validates :destination, presence: true, format: { with: URI::regexp(%w(http https)), message: "is not a valid url" }, uniqueness: true
   validates :slug, presence: true
+
+  def full_link
+    # Localhost 3000 shouldn't be hardcoded
+    URI.join('http://localhost:3000/', slug).to_s
+  end
 end
