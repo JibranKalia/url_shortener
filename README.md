@@ -5,19 +5,24 @@
 Ensure you have docker on your system.
 
 ```
-docker-compose up --build
+  # Clone Repo
+  git clone https://github.com/JibranKalia/url_shortener.git
+  cd url_shortener
 
-# In a separate terminal window. Needs to be run only the first time.
-docker-compose run web rails db:create 
-docker-compose run web rails db:migrate
+  # Build the image and standup the web and postgres containers
+  docker-compose up --build
 
-# Navigate to localhost:3000  
+  # In a separate terminal window. Needs to be run only the first time.
+  docker-compose run web rails db:create 
+  docker-compose run web rails db:migrate
 
-# Run tests
-docker-compose run web rspec
+  # Navigate to localhost:3000  
 
-# Shutdown
-docker-compose down
+  # Run tests
+  docker-compose run web rspec
+
+  # Shutdown
+  docker-compose down
 ```
 
 ## Non-Docker Setup
