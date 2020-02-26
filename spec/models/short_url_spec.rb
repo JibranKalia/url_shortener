@@ -41,4 +41,11 @@ RSpec.describe ShortUrl, type: :model do
       }.to raise_error(ActiveRecord::RecordInvalid)
     end
   end
+
+  describe "full_link" do 
+    it "creates the expected url" do
+      short_url = ShortUrl.create!(slug: "1234", destination: "http://www.google.com") 
+      expect(short_url.full_link).to eq('http://localhost:3000/1234')
+    end
+  end
 end
