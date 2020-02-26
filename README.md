@@ -35,6 +35,8 @@ Ensure you have docker on your system.
 
 ## Non-Docker Setup
 
+Note: Please use the docker setup for the time being.
+
 ```
   # Clone Repo
   git clone https://github.com/JibranKalia/url_shortener.git
