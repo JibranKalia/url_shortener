@@ -19,8 +19,8 @@ Ensure you have docker on your system. Run `docker run hello-world` to confirm.
   # then in a *separate* terminal window run these commands:
   # Note: These need to be run only the first time.
 
+  cd url_shortener
   docker-compose run web rails db:create 
-
   docker-compose run web rails db:migrate
 
   # Navigate to localhost:3000  
