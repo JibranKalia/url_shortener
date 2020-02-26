@@ -12,7 +12,14 @@ Ensure you have docker on your system.
   # Build the image and standup the web and postgres containers
   docker-compose up --build
 
-  # In a separate terminal window. Needs to be run only the first time.
+
+  # When postgres and rails are both running:
+    # Rails ready: Listening on tcp://0.0.0.0:3000
+    # Postgres ready: database system is ready to accept connections
+  # then in a separate terminal window run these commands. 
+  # Note: These need to be run only the first time.
+
+  
   docker-compose run web rails db:create 
   docker-compose run web rails db:migrate
 
