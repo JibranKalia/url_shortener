@@ -2,7 +2,7 @@
 
 ## Docker Setup
 
-Ensure you have docker on your system.
+Ensure you have docker on your system. Run `docker run hello-world` to confirm.
 
 ```
   # Clone Repo
