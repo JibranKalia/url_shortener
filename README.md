@@ -1,5 +1,40 @@
 # Setup
 
+## Docker Setup
+
+Ensure you have docker on your system.
+
+```
+  # Clone Repo
+  git clone https://github.com/JibranKalia/url_shortener.git
+  cd url_shortener
+
+  # Build the image and standup the web and postgres containers
+  docker-compose up --build
+
+
+  # When Postgres and Rails are BOTH running:
+    # Postgres ready: db_1 | 2020-02-26 18:35:19.426 UTC [1] LOG:  database system is ready to accept connections
+    # Rails ready: web_1  | * Listening on tcp://0.0.0.0:3000
+  # then in a separate terminal window run these commands. 
+  # Note: These need to be run only the first time.
+
+  docker-compose run web rails db:create 
+
+  docker-compose run web rails db:migrate
+
+  # Navigate to localhost:3000  
+  # The first load will take a few seconds because Webpacker is compiling.
+
+  # Run tests
+  docker-compose run web rspec
+
+  # Shutdown
+  docker-compose down
+```
+
+## Non-Docker Setup
+
 ```
   # Clone Repo
   git clone https://github.com/JibranKalia/url_shortener.git
