@@ -20,9 +20,8 @@ docker-compose run web rspec
 docker-compose down
 ```
 
-## Setup
+## Non-Docker Setup
 
-After that navigate to either `localhost:3000`.
 ```
   # Clone Repo
   git clone https://github.com/JibranKalia/url_shortener.git
