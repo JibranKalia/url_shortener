@@ -17,6 +17,7 @@ Ensure you have docker on your system.
   docker-compose run web rails db:migrate
 
   # Navigate to localhost:3000  
+  # The first load will take a few seconds because Webpacker is compiling
 
   # Run tests
   docker-compose run web rspec
